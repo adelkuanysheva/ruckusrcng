@@ -1,1 +1,146 @@
-<p>hi</p>
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/sSr7UTWqnID
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+import Link from "next/link"
+import { Avatar } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { CardHeader, CardContent, Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
+export default function Component() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <header className="px-4 py-6 bg-purple-800 text-white">
+        <div className="container mx-auto flex items-center justify-between">
+          <Link className="flex items-center space-x-2" href="#">
+            <BikeIcon className="w-8 h-8" />
+            <span className="font-bold text-xl">Ruckus Racing</span>
+          </Link>
+          <nav className="space-x-4">
+            <Link className="text-white hover:text-purple-300" href="#">
+              About
+            </Link>
+            <Link className="text-white hover:text-purple-300" href="#">
+              Members
+            </Link>
+            <Link className="text-white hover:text-purple-300" href="#">
+              Events
+            </Link>
+            <Link className="text-white hover:text-purple-300" href="#">
+              Sponsors
+            </Link>
+            <Link className="text-white hover:text-purple-300" href="#">
+              Contact Us
+            </Link>
+          </nav>
+        </div>
+      </header>
+      <main className="flex-1">
+        <section className="py-12 px-4 bg-white" id="about">
+          <div className="container mx-auto space-y-6">
+            <h2 className="text-4xl font-bold text-center">About Our Team</h2>
+            <p className="text-gray-600 text-center max-w-2xl mx-auto">
+              We are a professional cycling team competing in races around the world. Our mission is to inspire and
+              empower people to lead healthier, more active lives.
+            </p>
+          </div>
+        </section>
+        <section className="py-12 px-4 bg-gray-100" id="members">
+          <div className="container mx-auto space-y-6">
+            <h2 className="text-4xl font-bold text-center">Meet Our Members</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card>
+                <CardHeader>
+                  <Avatar alt="Member Avatar" className="w-16 h-16" src="/placeholder.svg?height=100&width=100" />
+                  <div className="ml-4">
+                    <h3 className="text-lg font-bold">John Doe</h3>
+                    <Badge className="mt-2">Captain</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    John Doe is the captain of the team and a seasoned cyclist with over 10 years of professional
+                    experience.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section className="py-12 px-4 bg-white" id="events">
+          <div className="container mx-auto space-y-6">
+            <h2 className="text-4xl font-bold text-center">Upcoming Events</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card>
+                <CardHeader>
+                  <h3 className="text-lg font-bold">Tour de France</h3>
+                  <p className="text-gray-600 mt-2">July 1, 2024 - July 23, 2024</p>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">Join us as we compete in the world's most prestigious cycling race.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section className="py-12 px-4 bg-gray-100" id="sponsors">
+          <div className="container mx-auto space-y-6">
+            <h2 className="text-4xl font-bold text-center">Our Sponsors</h2>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              <img
+                alt="Sponsor Logo"
+                height="50"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "200/50",
+                  objectFit: "cover",
+                }}
+                width="200"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="py-12 px-4 bg-white" id="contact">
+          <div className="container mx-auto space-y-6">
+            <h2 className="text-4xl font-bold text-center">Contact Us</h2>
+            <div className="max-w-md mx-auto">
+              <form>
+                <input className="w-full p-2 my-2 border rounded" placeholder="Your Name" type="text" />
+                <input className="w-full p-2 my-2 border rounded" placeholder="Your Email" type="email" />
+                <textarea className="w-full p-2 my-2 h-32 border rounded" placeholder="Your Message" />
+                <Button className="w-full p-2 mt-4 bg-purple-800 text-white rounded">Submit</Button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="px-4 py-6 bg-purple-800 text-white">
+        <div className="container mx-auto text-center">© 2024 Ruckus Racing. All rights reserved.</div>
+      </footer>
+    </div>
+  )
+}
+
+function BikeIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="18.5" cy="17.5" r="3.5" />
+      <circle cx="5.5" cy="17.5" r="3.5" />
+      <circle cx="15" cy="5" r="1" />
+      <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
+    </svg>
+  )
+}
